@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>STORY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        margin: 0;
+        background-color: #000;
+        color: #fff;
+        overflow: hidden; /* Prevent native scroll */
+        font-family: 'Courier New', Courier, monospace;
+      }
+      /* Custom scrollbar hiding */
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      
+      /* 3D Scene setup */
+      .viewport {
+        perspective: 1000px;
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .world {
+        transform-style: preserve-3d;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .card {
+        backface-visibility: hidden; /* or visible depending on effect */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .glass-panel {
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      }
+      
+      /* Animation utilities */
+      .fade-enter { opacity: 0; transform: translateZ(-200px); }
+      .fade-enter-active { opacity: 1; transform: translateZ(0); transition: all 500ms; }
+      .fade-exit { opacity: 1; transform: translateZ(0); }
+      .fade-exit-active { opacity: 0; transform: translateZ(200px); transition: all 500ms; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

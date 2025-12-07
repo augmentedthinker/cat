@@ -1,0 +1,5 @@
+{
+  "name": "STORY - Narrative Depth Engine",
+  "description": "A spatial, AI-assisted story viewer where users move forward through a sequence of scenes along the Z-axis.",
+  "requestFramePermissions": []
+}
